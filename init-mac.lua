@@ -1800,7 +1800,34 @@ end
 
 local Terminal  = require("toggleterm.terminal").Terminal
 
+local function add_markdown_image_at_mouse()
+    -- Get clipboard content
+    local clipboard = vim.fn.getreg('+')
+    local url = ""
 
+    if clipboard ~= "" and clipboard:match("^https?://") or clipboard:match("^/.*") then
+        url = clipboard
+    else
+        url = vim.fn.input("Image URL/Path: ")
+    end
+
+    if url == "" then
+        print("No URL provided. Aborting.")
+        return
+    end
+
+    -- Get mouse position
+    local mouse_pos = vim.fn.getmousepos()
+    local row = mouse_pos.line
+    local col = mouse_pos.column
+
+    -- Format the markdown string
+    local img_tag = string.format("![](%s)", url)
+
+    -- Insert the text at the mouse position
+    -- Note: nvim_buf_set_text uses 0-indexed rows and columns
+    vim.api.nvim_buf_set_text(0, row - 1, col, row - 1, col, {img_tag})
+end
 
 -- Define a terminal that runs a specific Python file
 
@@ -2881,6 +2908,8 @@ wk.register({
     name = "Markdown",
 
     o = { ":MarkdownPreview<CR>", "Open Markdown Preview" },
+
+    i = { add_markdown_image_at_mouse, "Embed Markdown image"},
 
     t = { "<cmd>MarkdownPreviewToggle<CR>", "Toggle Markdown Preview" },
 
