@@ -995,6 +995,17 @@ function _G.open_right_terminal_with_mst()
   mst_terminal:toggle()
 end
 
+-- Patch vim.lsp.client.resolve_bufnr to avoid bufnr errors
+local client = require("vim.lsp.client")
+local old_resolve_bufnr = client.resolve_bufnr
+
+client.resolve_bufnr = function(bufnr)
+  if type(bufnr) == "function" then
+    return 0 -- default to current buffer if a function is passed
+  end
+  return old_resolve_bufnr(bufnr)
+end
+
 -- Function for Markdown -> PDF
 local function markdown_to_pdf()
     local file_path = vim.fn.expand("%:p")
