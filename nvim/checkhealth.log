@@ -1,0 +1,391 @@
+
+==============================================================================
+auto-dark-mode: require("auto-dark-mode.health").check()
+
+auto-dark-mode.nvim ~
+- OK Setup is correct
+- Detected operating system: Darwin
+- Using query command: `defaults read -g AppleInterfaceStyle`
+- Benchmark: 4.67ms avg / 2.50ms min / 12.05ms max
+- OK Update interval (1000ms) is 214.12x the average query time
+
+==============================================================================
+lazy: require("lazy.health").check()
+
+lazy.nvim ~
+- {lazy.nvim} version `11.17.5`
+- Query response:
+  stdout: Dark
+  
+  stderr: 
+  
+- OK {git} `version 2.45.1`
+- OK no existing packages found by other package managers
+- OK packer_compiled.lua not found
+
+luarocks ~
+- checking `hererocks` installation
+- OK no plugins require `luarocks`, so you can ignore any warnings below
+- OK {python3} `Python 3.8.5`
+- OK {/Users/ashwinnair/.local/share/nvim/lazy-rocks/hererocks/bin/luarocks} `3.12.2`
+- OK {/Users/ashwinnair/.local/share/nvim/lazy-rocks/hererocks/bin/lua} `Lua 5.1.5  Copyright (C) 1994-2012 Lua.org, PUC-Rio`
+
+==============================================================================
+lspconfig: require("lspconfig.health").check()
+
+LSP configs active in this session (globally) ~
+- Configured servers: ts_ls, clangd, gopls, pyright
+- OK Deprecated servers: (none)
+
+LSP configs active in this buffer (bufnr: 1) ~
+- Language client log: ~/.local/state/nvim/lsp.log
+- Detected filetype: ``
+- 0 client(s) attached to this buffer
+
+Docs for active configs: ~
+
+==============================================================================
+luasnip: require("luasnip.health").check()
+
+luasnip ~
+- WARNING             For Variable/Placeholder-transformations, luasnip requires
+              the jsregexp library. See `:help |luasnip-lsp-snippets-transformations`| for advice
+          
+
+==============================================================================
+noice: require("noice.health").check()
+
+noice.nvim ~
+- OK *Neovim* >= 0.9.0
+- WARNING *Neovim* >= 0.11 is highly recommended, since it fixes some issues related to `vim.ui_attach`
+- OK *vim.go.lazyredraw* is not enabled
+- OK `snacks.nvim` is installed
+- OK `nvim-notify` is installed
+- OK {TreeSitter} `vim` parser is installed
+- WARNING {TreeSitter} `regex` parser is not installed. Highlighting of the cmdline for `regex` might be broken
+- OK {TreeSitter} `lua` parser is installed
+- OK {TreeSitter} `bash` parser is installed
+- OK {TreeSitter} `markdown` parser is installed
+- OK {TreeSitter} `markdown_inline` parser is installed
+
+==============================================================================
+null-ls: require("null-ls.health").check()
+
+- OK prettier: the command "prettier" is executable.
+- OK eslint_d: the command "eslint_d" is executable.
+
+==============================================================================
+nvim: require("nvim.health").check()
+
+Configuration ~
+- OK no issues found
+
+Runtime ~
+- OK $VIMRUNTIME: /usr/local/Cellar/neovim/0.10.4/share/nvim/runtime
+
+Performance ~
+- OK Build type: Release
+
+Remote Plugins ~
+- OK Up to date
+
+terminal ~
+- key_backspace (kbs) terminfo entry: `key_backspace=^H`
+- key_dc (kdch1) terminfo entry: `key_dc=\E[3~`
+- $TERM_PROGRAM="tmux"
+- $COLORTERM="truecolor"
+
+tmux ~
+- OK escape-time: 10
+- WARNING `focus-events` is not enabled. |'autoread'| may not work.
+  - ADVICE:
+    - (tmux 1.9+ only) Set `focus-events` in ~/.tmux.conf:
+      set-option -g focus-events on
+- $TERM: xterm-256color
+- default-terminal: screen-256color
+- ERROR $TERM differs from the tmux `default-terminal` setting. Colors might look wrong.
+  - ADVICE:
+    - $TERM may have been set by some rc (.bashrc, .zshrc, ...).
+
+External Tools ~
+- OK ripgrep 14.1.1 (/usr/local/bin/rg)
+
+==============================================================================
+nvim-treesitter: require("nvim-treesitter.health").check()
+
+Installation ~
+- OK `tree-sitter` found 0.24.7 (parser generator, only needed for :TSInstallFromGrammar)
+- OK `node` found v20.18.0 (only needed for :TSInstallFromGrammar)
+- OK `git` executable found.
+- OK `cc` executable found. Selected from { vim.NIL, "cc", "gcc", "clang", "cl", "zig" }
+  Version: Apple clang version 14.0.3 (clang-1403.0.22.14.1)
+- OK Neovim was compiled with tree-sitter runtime ABI version 14 (required >=13). Parsers must be compatible with runtime ABI.
+
+OS Info:
+{
+  machine = "x86_64",
+  release = "22.6.0",
+  sysname = "Darwin",
+  version = "Darwin Kernel Version 22.6.0: Thu Mar  6 21:52:09 PST 2025; root:xnu-8796.141.3.711.5~1/RELEASE_X86_64"
+} ~
+
+Parser/Features         H L F I J
+  - bash                ✓ ✓ ✓ . ✓
+  - c                   ✓ ✓ ✓ ✓ ✓
+  - csv                 ✓ . . . .
+  - gitcommit           ✓ . . . ✓
+  - html                ✓ ✓ ✓ ✓ ✓
+  - lua                 ✓ ✓ ✓ ✓ ✓
+  - markdown            ✓ . ✓ ✓ ✓
+  - markdown_inline     ✓ . . . ✓
+  - python              ✓ ✓ ✓ ✓ ✓
+  - query               x ✓ ✓ ✓ ✓
+  - requirements        ✓ . . . ✓
+  - sql                 ✓ . ✓ ✓ ✓
+  - tmux                ✓ . . . ✓
+  - vim                 ✓ ✓ ✓ . ✓
+  - vimdoc              ✓ . . . ✓
+
+  Legend: H[ighlight], L[ocals], F[olds], I[ndents], In[j]ections
+         +) multiple parsers found, only one will be used
+         x) errors found in the query, try to run :TSUpdate {lang} ~
+
+The following errors have been detected: ~
+- ERROR query(highlights): ...m/0.10.4/share/nvim/runtime/lua/vim/treesitter/query.lua:252: Query error at 14:2. Invalid node type "missing_node":
+  (missing_node
+   ^
+  
+  query(highlights) is concatenated from the following files:
+  | [ERROR]:"/Users/ashwinnair/.local/share/nvim/lazy/nvim-treesitter/queries/query/highlights.scm", failed to load: ...m/0.10.4/share/nvim/runtime/lua/vim/treesitter/query.lua:252: Query error at 14:2. Invalid node type "missing_node":
+  (missing_node
+   ^
+  
+
+==============================================================================
+provider.clipboard: require("provider.clipboard.health").check()
+
+Clipboard (optional) ~
+- OK Clipboard tool found: pbcopy
+
+==============================================================================
+provider.node: require("provider.node.health").check()
+
+Node.js provider (optional) ~
+- Node.js: v20.18.0
+  
+- Nvim node.js host: /usr/local/lib/node_modules/neovim/bin/cli.js
+
+==============================================================================
+provider.perl: require("provider.perl.health").check()
+
+Perl provider (optional) ~
+- WARNING "Neovim::Ext" cpan module is not installed
+  - ADVICE:
+    - See :help |provider-perl| for more information.
+    - You may disable this provider (and warning) by adding `let g:loaded_perl_provider = 0` to your init.vim
+- WARNING No usable perl executable found
+
+==============================================================================
+provider.python: require("provider.python.health").check()
+
+Python 3 provider (optional) ~
+- WARNING No Python executable found that can `import neovim`. Using the first available executable for diagnostics.
+- WARNING Could not load Python :
+  /Library/Frameworks/Python.framework/Versions/3.8/bin/python3 does not have the "neovim" module.
+  python3.12 not found in search path or not executable.
+  python3.11 not found in search path or not executable.
+  python3.10 not found in search path or not executable.
+  python3.9 not found in search path or not executable.
+  /Library/Frameworks/Python.framework/Versions/3.8/bin/python3.8 does not have the "neovim" module.
+  python3.7 not found in search path or not executable.
+  python not found in search path or not executable.
+  - ADVICE:
+    - See :help |provider-python| for more information.
+    - You may disable this provider (and warning) by adding `let g:loaded_python3_provider = 0` to your init.vim
+- Executable: Not found
+
+Python virtualenv ~
+- OK no $VIRTUAL_ENV
+
+==============================================================================
+provider.ruby: require("provider.ruby.health").check()
+
+Ruby provider (optional) ~
+- Ruby: ruby 2.6.10p210 (2022-04-12 revision 67958) [universal.x86_64-darwin22]
+- Host: /usr/local/bin/neovim-ruby-host
+- WARNING Gem "neovim" is out-of-date. Installed: 0.9.1
+  , latest: Ignoring iStats-1.6.1 because its extensions are not built. Try: gem pristine iStats --version 1.6.1
+  neovim (0.10.0, 0.9.1, 0.9.0, 0.8.1, 0.8.0, 0.7.1, 0.7.0, 0.6.2, 0.6.1, 0.6.0, 0.5.1, 0.5.0, 0.4.0, 0.3.3, 0.3.2, 0.3.1, 0.3.0, 0.2.5, 0.2.4, 0.2.3, 0.2.2, 0.2.1, 0.2.0, 0.1.0, 0.0.6, 0.0.5, 0.0.4, 0.0.3, 0.0.2, 0.0.1)
+  
+  - ADVICE:
+    - Run in shell: gem update neovim
+
+==============================================================================
+render-markdown: require("render-markdown.health").check()
+
+render-markdown.nvim [versions] ~
+- WARNING neovim < 0.11 some features will not work
+- OK tree-sitter ABI: 14
+- OK plugin: 8.10.3
+
+render-markdown.nvim [configuration] ~
+- ERROR checkbox.icons - expected: nil, got: table
+
+render-markdown.nvim [tree-sitter markdown] ~
+- OK parser: installed
+- ERROR Failed to run healthcheck for "render-markdown" plugin. Exception:
+  ...lazy/render-markdown.nvim/lua/render-markdown/health.lua:118: attempt to concatenate field 'abi_version' (a nil value)
+  
+
+==============================================================================
+snacks: require("snacks.health").check()
+
+Snacks ~
+- OK setup called
+
+Snacks.bigfile ~
+- OK setup {enabled}
+
+Snacks.dashboard ~
+- OK setup {enabled}
+- ERROR setup did not run
+
+Snacks.explorer ~
+- OK setup {enabled}
+- OK 'gio' `2.84.1`
+- OK System trash command found
+
+Snacks.image ~
+- WARNING setup {disabled}
+- OK 'kitty' `kitty 0.43.1 created by Kovid Goyal`
+- OK 'wezterm' `wezterm 20240203-110809-5046fc22`
+- OK 'ghostty' `Ghostty 1.2.0`
+- OK 'magick' `Version: ImageMagick 7.1.1-47 Q16-HDRI x86_64 22763 https://imagemagick.org`
+- OK 'convert' `WARNING: The convert command is deprecated in IMv7, use "magick" instead of "convert" or "magick convert"`
+- OK `tmux` detected and supported
+- OK Terminal Dimensions:
+  - {size}: `0` x `0` pixels
+  - {scale}: `1.00`
+  - {cell}: `0` x `0` pixels
+- OK Available Treesitter languages:
+    `html`, `markdown_inline`, `markdown`
+- WARNING Missing Treesitter languages:
+    `css`, `javascript`, `latex`, `norg`, `scss`, `svelte`, `tsx`, `typst`, `vue`
+- WARNING Image rendering in docs with missing treesitter parsers won't work
+- OK 'gs' `10.05.1`
+- OK PDF files are supported
+- OK 'pdflatex' `pdfTeX 3.141592653-2.6-1.40.26 (TeX Live 2024/Homebrew)`
+- WARNING The `latex` treesitter parser is required to render LaTeX math expressions
+- ERROR Tool not found: 'mmdc'
+- WARNING `mmdc` is required to render Mermaid diagrams
+- ERROR your terminal does not support the kitty graphics protocol
+- supported terminals: `kitty`, `wezterm`, `ghostty`
+
+Snacks.input ~
+- OK setup {enabled}
+- ERROR `vim.ui.input` is not set to `Snacks.input`
+
+Snacks.lazygit ~
+- ERROR {lazygit} not installed
+
+Snacks.notifier ~
+- OK setup {enabled}
+- OK is ready
+
+Snacks.picker ~
+- OK setup {enabled}
+- ERROR `vim.ui.select` is not set to `Snacks.picker.select`
+- WARNING Missing Treesitter languages:
+    `regex`
+- OK 'git' `git version 2.45.1`
+- OK 'rg' `ripgrep 14.1.1`
+- OK `Snacks.picker.grep()` is available
+- OK 'fd' `fd 10.2.0`
+- OK `Snacks.picker.files()` is available
+- OK `Snacks.picker.explorer()` is available
+- OK `SQLite3` is available
+
+Snacks.quickfile ~
+- OK setup {enabled}
+
+Snacks.scope ~
+- OK setup {enabled}
+
+Snacks.scroll ~
+- OK setup {enabled}
+
+Snacks.statuscolumn ~
+- OK setup {enabled}
+
+Snacks.terminal ~
+- OK shell configured
+  - `vim.o.shell`: /bin/zsh
+  - `parsed`: { "/bin/zsh" }
+
+Snacks.toggle ~
+- OK {which-key} is installed
+
+Snacks.words ~
+- OK setup {enabled}
+
+==============================================================================
+vim.lsp: require("vim.lsp.health").check()
+
+- LSP log level : WARN
+- Log path: /Users/ashwinnair/.local/state/nvim/lsp.log
+- Log size: 59604 KB
+
+vim.lsp: Active Clients ~
+- No active clients
+
+vim.lsp: File Watcher ~
+- file watching "(workspace/didChangeWatchedFiles)" disabled on all clients
+
+vim.lsp: Position Encodings ~
+- No active clients
+
+==============================================================================
+vim.treesitter: require("vim.treesitter.health").check()
+
+- Nvim runtime ABI version: 14
+- OK Parser: bash                 ABI: 14, path: /Users/ashwinnair/.local/share/nvim/lazy/nvim-treesitter/parser/bash.so
+- OK Parser: c                    ABI: 14, path: /Users/ashwinnair/.local/share/nvim/lazy/nvim-treesitter/parser/c.so
+- OK Parser: csv                  ABI: 14, path: /Users/ashwinnair/.local/share/nvim/lazy/nvim-treesitter/parser/csv.so
+- OK Parser: gitcommit            ABI: 14, path: /Users/ashwinnair/.local/share/nvim/lazy/nvim-treesitter/parser/gitcommit.so
+- OK Parser: html                 ABI: 14, path: /Users/ashwinnair/.local/share/nvim/lazy/nvim-treesitter/parser/html.so
+- OK Parser: lua                  ABI: 14, path: /Users/ashwinnair/.local/share/nvim/lazy/nvim-treesitter/parser/lua.so
+- OK Parser: markdown             ABI: 14, path: /Users/ashwinnair/.local/share/nvim/lazy/nvim-treesitter/parser/markdown.so
+- OK Parser: markdown_inline      ABI: 14, path: /Users/ashwinnair/.local/share/nvim/lazy/nvim-treesitter/parser/markdown_inline.so
+- OK Parser: python               ABI: 14, path: /Users/ashwinnair/.local/share/nvim/lazy/nvim-treesitter/parser/python.so
+- OK Parser: requirements         ABI: 14, path: /Users/ashwinnair/.local/share/nvim/lazy/nvim-treesitter/parser/requirements.so
+- OK Parser: sql                  ABI: 14, path: /Users/ashwinnair/.local/share/nvim/lazy/nvim-treesitter/parser/sql.so
+- OK Parser: tmux                 ABI: 14, path: /Users/ashwinnair/.local/share/nvim/lazy/nvim-treesitter/parser/tmux.so
+- OK Parser: vim                  ABI: 14, path: /Users/ashwinnair/.local/share/nvim/lazy/nvim-treesitter/parser/vim.so
+- OK Parser: c                    ABI: 14, path: /usr/local/Cellar/neovim/0.10.4/lib/nvim/parser/c.so
+- OK Parser: lua                  ABI: 14, path: /usr/local/Cellar/neovim/0.10.4/lib/nvim/parser/lua.so
+- OK Parser: markdown             ABI: 14, path: /usr/local/Cellar/neovim/0.10.4/lib/nvim/parser/markdown.so
+- OK Parser: markdown_inline      ABI: 14, path: /usr/local/Cellar/neovim/0.10.4/lib/nvim/parser/markdown_inline.so
+- OK Parser: query                ABI: 14, path: /usr/local/Cellar/neovim/0.10.4/lib/nvim/parser/query.so
+- OK Parser: vim                  ABI: 14, path: /usr/local/Cellar/neovim/0.10.4/lib/nvim/parser/vim.so
+- OK Parser: vimdoc               ABI: 14, path: /usr/local/Cellar/neovim/0.10.4/lib/nvim/parser/vimdoc.so
+
+==============================================================================
+which-key: require("which-key.health").check()
+
+- OK Most of these checks are for informational purposes only.
+  WARNINGS should be treated as a warning, and don't necessarily indicate a problem with your config.
+  Please |DON'T| report these warnings as an issue.
+
+Checking your config ~
+- WARNING |mini.icons| is not installed
+- OK |nvim-web-devicons| is installed
+
+Checking for issues with your mappings ~
+- OK No issues reported
+
+checking for overlapping keymaps ~
+- OK No overlapping keymaps found
+
+Checking for duplicate mappings ~
+- OK No duplicate mappings found
+
